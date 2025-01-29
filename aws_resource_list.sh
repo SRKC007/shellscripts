@@ -1,12 +1,12 @@
 #!/bin/bash
 
-###############################################################################
-# Author: Abhishek Veeramalla
-# Version: v0.0.1
+#########
+# Author: SivaRamaKrishna Guntamukkaal
+# Version: v0.1
 
-# Script to automate the process of listing all the resources in an AWS account
-#
-# Below are the services that are supported by this script:
+# Streamline the process of list of services used by aws
+
+# Following services are mentioned in this script:
 # 1. EC2
 # 2. RDS
 # 3. S3
@@ -30,10 +30,15 @@
 #############################################################################
 
 # Check if the required number of arguments are passed
+
+# --->  $# - Used for the command line arguments in shell scripts
+# [In thi scrip if only 2 arguments passed then only valid the command, if not throw the error ]
 if [ $# -ne 2 ]; then
     echo "Usage: ./aws_resource_list.sh  <aws_region> <aws_service>"
     echo "Example: ./aws_resource_list.sh us-east-1 ec2"
     exit 1
+
+# exit 1 means print the first line usage line to the user to understand the command properly to submit again
 fi
 
 # Assign the arguments to variables and convert the service to lowercase
