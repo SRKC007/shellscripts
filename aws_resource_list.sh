@@ -10,18 +10,12 @@
 # 1. EC2
 # 2. RDS
 # 3. S3
-# 4. CloudFront
-# 5. VPC
-# 6. IAM
+# 4. VPC
+# 5. IAM
+# 6. DynamoDB
 # 7. Route53
-# 8. CloudWatch
-# 9. CloudFormation
-# 10. Lambda
-# 11. SNS
-# 12. SQS
-# 13. DynamoDB
-# 14. VPC
-# 15. EBS
+# 8. Lambda
+# 9. EBS
 #
 # The script will prompt the user to enter the AWS region and the service for which the resources need to be listed.
 #
@@ -71,10 +65,6 @@ case $aws_service in
         echo "Listing S3 Buckets in $aws_region"
         aws s3api list-buckets --region $aws_region
         ;;
-    cloudfront)
-        echo "Listing CloudFront Distributions in $aws_region"
-        aws cloudfront list-distributions --region $aws_region
-        ;;
     vpc)
         echo "Listing VPCs in $aws_region"
         aws ec2 describe-vpcs --region $aws_region
@@ -87,25 +77,9 @@ case $aws_service in
         echo "Listing Route53 Hosted Zones in $aws_region"
         aws route53 list-hosted-zones --region $aws_region
         ;;
-    cloudwatch)
-        echo "Listing CloudWatch Alarms in $aws_region"
-        aws cloudwatch describe-alarms --region $aws_region
-        ;;
-    cloudformation)
-        echo "Listing CloudFormation Stacks in $aws_region"
-        aws cloudformation describe-stacks --region $aws_region
-        ;;
     lambda)
         echo "Listing Lambda Functions in $aws_region"
         aws lambda list-functions --region $aws_region
-        ;;
-    sns)
-        echo "Listing SNS Topics in $aws_region"
-        aws sns list-topics --region $aws_region
-        ;;
-    sqs)
-        echo "Listing SQS Queues in $aws_region"
-        aws sqs list-queues --region $aws_region
         ;;
     dynamodb)
         echo "Listing DynamoDB Tables in $aws_region"
