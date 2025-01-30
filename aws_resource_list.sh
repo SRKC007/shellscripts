@@ -25,7 +25,7 @@
 
 # Check if the required number of arguments are passed
 
-# -->  $# - Used for the command line arguments in shell scripts
+# --->  $# - Used for the command line arguments in shell scripts
 # [In thi scrip if only 2 arguments passed then only valid the command, if not throw the error ]
 if [ $# -ne 2 ]; then
     echo "Usage: ./aws_resource_list.sh  <aws_region> <aws_service>"
